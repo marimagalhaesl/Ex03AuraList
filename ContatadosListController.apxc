@@ -1,0 +1,8 @@
+public class ContatadosListController {
+    
+    @AuraEnabled
+    public static List<Opportunity> contatadosList() {
+        return [SELECT Name, StageName, Status__c FROM Opportunity WHERE StageName = 'Negotiation/Review' ORDER BY Status__c];
+    }
+
+}
